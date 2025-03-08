@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Regalito❤</title>
+</head>
+<body>
+
+    <!-- Contenedor del fondo animado de estrellas -->
+    <div class="stars"></div>
+
+    <div class="greetings">
+        <span>A</span>
+        <span>M</span>
+	    <span>O</span>
+        <span>R</span>
+        <span>!</span>
+        <span style="display: block; width: fit-content; margin: auto;">🥺</span>
+    </div>
+
+    <div class="description">
+        <span>TENGO ALGO PARA TÍ !!!</span>
+    </div>
+
+    <div class="button">
+        <button>
+            <a href="FLORES.html">PRESIONAME 👀</a>
+        </button>
+    </div>
+
+    <script>
+        const starContainer = document.querySelector('.stars');
+    
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+    
+            // Posición aleatoria
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+    
+            // Tamaño aleatorio
+            const size = Math.random() * 5 + 2; // Ahora las estrellas pueden ser más grandes
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+    
+            // Asigna una animación con duración variable
+            const duration = Math.random() * 3 + 2; // Entre 2 y 5 segundos
+            star.style.animationDuration = `${duration}s`;
+    
+            starContainer.appendChild(star);
+    
+            // Eliminar la estrella después de que termine la animación
+            setTimeout(() => {
+                star.remove();
+            }, duration * 1000);
+        }
+    
+        // Crear estrellas continuamente
+        setInterval(createStar, 200);
+    </script>
+
+</body>
+</html>
